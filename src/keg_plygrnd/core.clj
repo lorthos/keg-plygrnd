@@ -1,6 +1,10 @@
-(ns keg-plygrnd.core)
+(ns keg-plygrnd.core
+  (:require [powderkeg.core :as keg]
+            [net.cgrand.xforms :as x]))
 
-(defn foo
-  "I don't do a whole lot."
-  [x]
-  (println x "Hello, World!"))
+(keg/connect! "spark://macbook-pro.home:7077")
+
+(def rdd (.textFile keg/*sc* "s3://lorthos-emr/*.csv"))
+
+(into []
+      (rdd (filter #(.contains % "spark"))))
