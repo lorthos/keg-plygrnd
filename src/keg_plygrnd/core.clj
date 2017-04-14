@@ -2,15 +2,18 @@
   (:require [powderkeg.core :as keg]
             [net.cgrand.xforms :as x]))
 
-(defn get-rdd []
-  (.textFile keg/*sc* "s3://bucketr/*.csv"))
-
 (defn -main []
-  (let [
-        ;conn (keg/connect! "yarn-client")
+  )
 
-        courses (into []
-                      (filter #(.contains % "spark")) (get-rdd))]
-    (println courses)
-    )
+
+(comment
+  (require '[powderkeg.core :as keg])
+  (require '[net.cgrand.xforms :as x])
+
+  (keg/connect! "yarn-client")
+
+  (.textFile keg/*sc* "s3://lorthos-emr/*.csv")
+
+  (into [] (filter #(.contains % "math"))
+        (.textFile keg/*sc* "s3://lorthos-emr/*.csv"))
   )
