@@ -1,7 +1,6 @@
 (ns keg-plygrnd.core
   (:require [powderkeg.core :as keg]
-            [net.cgrand.xforms :as x])
-  :gen-class)
+            [net.cgrand.xforms :as x]))
 
 (defn -main []
   (let [
