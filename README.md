@@ -1,6 +1,6 @@
 # keg-plygrnd
 
-A Clojure library designed to ... well, that part is up to you.
+Playground for Powderkeg & EMR
 
 ## Usage
 
