@@ -7,6 +7,9 @@
 
 
 (comment
+  spark-submit --master yarn-client --class powderkeg.repl target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar
+
+
   (require '[powderkeg.core :as keg])
   (require '[net.cgrand.xforms :as x])
 

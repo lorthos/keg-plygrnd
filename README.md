@@ -4,7 +4,8 @@ Playground for Powderkeg & EMR
 
 ## Usage
 
-FIXME
+        lein uberjar
+        spark-submit --master yarn-client --class powderkeg.repl target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar
 
 ## License
 
