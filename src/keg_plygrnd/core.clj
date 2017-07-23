@@ -1,9 +1,8 @@
 (ns keg-plygrnd.core
-  (:require [powderkeg.core :as keg]
-            [net.cgrand.xforms :as x]))
+  (:gen-class))
 
 (defn -main []
-  )
+  (println "does nothing"))
 
 
 (comment

@@ -5,5 +5,19 @@
             :url  "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [[org.clojure/clojure "1.8.0"]
                  [hcadatalab/powderkeg "0.5.1"]
-                 [org.apache.spark/spark-core_2.11 "2.1.0"]
-                 [org.apache.spark/spark-streaming_2.11 "2.1.0"]])
+                 ]
+
+  :profiles {:provided
+             {:dependencies
+              [
+               [org.apache.spark/spark-core_2.11 "2.1.0"]
+               [org.apache.spark/spark-streaming_2.11 "2.1.0"]
+               ]}}
+  :repl-options {
+                 :host "0.0.0.0"
+                 :port 4001
+                 }
+
+  )
+
+
