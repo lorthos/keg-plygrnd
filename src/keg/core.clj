@@ -1,8 +1,10 @@
-(ns keg-plygrnd.core
+(ns keg.core
+  (:require [keg.repl :as nrepl])
   (:gen-class))
 
 (defn -main []
-  (println "does nothing"))
+  (println "starting nrepl")
+  (nrepl/start-nrepl! 5555))
 
 
 (comment
