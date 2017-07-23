@@ -22,10 +22,10 @@
                [org.apache.spark/spark-streaming_2.11 "2.1.0"]
                ]}}
 
-  ;:repl-options {
-  ;               :host "0.0.0.0"
-  ;               :port 4002
-  ;               }
+  :repl-options {
+                 :host "0.0.0.0"
+                 :port 4002
+                 }
 
   :main keg.core
 

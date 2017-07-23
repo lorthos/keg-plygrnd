@@ -21,3 +21,7 @@
   (into [] (filter #(.contains % "math"))
         (.textFile keg/*sc* "s3://lorthos-emr/*.csv"))
   )
+
+
+;remote repl
+; spark-submit --master yarn-client --class keg.core target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar
