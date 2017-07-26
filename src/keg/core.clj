@@ -4,28 +4,19 @@
             [clojure.pprint :as pp])
   (:gen-class))
 
-;; This is the leiningen task. It needs no arguments, and can run outside a project (assuming you've got the plugin
-;; installed in your profile).
-(defn gorilla
-  [& opts]
-  (let [opts-map (apply hash-map opts)
-        port (read-string (or (get opts-map ":port") "0"))
-        ip (or (get opts-map ":ip") "0.0.0.0")
-        nrepl-port (read-string (or (get opts-map ":nrepl-port") "0"))
-        ;; inject the gorilla-repl dependency into the target project
-        gorilla-options {}]
-    (g/run-gorilla-server {:port port
-                              :ip ip
-                              :nrepl-port nrepl-port
-                              :version "0.4.0"
-                              :project "keg-plygrnd"
-                              :gorilla-options gorilla-options})
-        ))
+
 
 (defn -main []
-  (println "starting nrepl")
-  (nrepl/start-nrepl! 5555)
-  (gorilla))
+  (println "starting gorilla repl...")
+  (g/run-gorilla-server {:port            5556
+                         :ip              "0.0.0.0"
+                         :nrepl-port      5557
+                         :version         "0.4.0"
+                         :project         "keg-plygrnd"
+                         :gorilla-options {}})
+  (println "starting nrepl ...")
+  ;(nrepl/start-nrepl! 5555)
+  )
 
 
 (comment
