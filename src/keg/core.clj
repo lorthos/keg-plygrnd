@@ -15,7 +15,7 @@
                          :project         "keg-plygrnd"
                          :gorilla-options {}})
   (println "starting nrepl ...")
-  ;(nrepl/start-nrepl! 5555)
+  (nrepl/start-nrepl! 5555)
   )
 
 
@@ -28,10 +28,7 @@
 
   (keg/connect! "yarn-client")
 
-  (.textFile keg/*sc* "s3://lorthos-emr/*.csv")
-
-  (into [] (filter #(.contains % "math"))
-        (.textFile keg/*sc* "s3://lorthos-emr/*.csv"))
+  (.textFile keg/*sc* "s3://S3_BUCKET/*.csv")
   )
 
 
