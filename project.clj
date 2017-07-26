@@ -13,6 +13,8 @@
                  [compojure "1.6.0"]
                  [ring/ring-jetty-adapter "1.6.0"]
                  [ring/ring-core "1.6.0"]
+
+		[gorilla-repl "0.4.0"]
                  ]
 
   :profiles {:provided

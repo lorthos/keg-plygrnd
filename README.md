@@ -1,17 +1,28 @@
 # keg-plygrnd
 
-Playground for Powderkeg & EMR
+Easy to run Clojure (Powderkeg) REPL on Spark
 
 ## Usage
 
+### Build jar
+
         lein uberjar
+
+### Run on Spark
+
         spark-submit --master yarn-client --class powderkeg.repl target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar
 
+### Run on EMR with Step API
 
-## Remote Nrepl over Http
 
-        spark-submit --master yarn-client --class keg.core target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar
+
+## repl on Cluster Over HTTP
         lein repl :connect  http://HOST:5555/nrepl
+
+## Gorilla Repl On Cluster
+        lein repl :connect  http://HOST:5555/nrepl
+
+
 
 ## License
 
