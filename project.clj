@@ -13,8 +13,9 @@
                  [compojure "1.6.0"]
                  [ring/ring-jetty-adapter "1.6.0"]
                  [ring/ring-core "1.6.0"]
-
                  [gorilla-repl "0.4.0"]
+
+                 [org.clojure/data.json "0.2.6"]
                  ]
 
   :profiles {:provided
