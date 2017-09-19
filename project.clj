@@ -31,7 +31,7 @@
                  }
 
   :main keg.core
-  :aot [keg.core]
+  :aot [keg.core keg.patch]
 
   )
 

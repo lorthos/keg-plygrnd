@@ -10,14 +10,13 @@ Easy to run Clojure (Powderkeg) REPL on Spark
 
 ### Run on Spark
 
-        spark-submit --master yarn-client --class keg.core target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar
+        spark-submit --master yarn-client --class keg.patch target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar
 
 ### Run on EMR with Step API
 
-        (copy uberjar to s3)
-        aws s3 cp target/keg-plygrnd-0.1.0-SNAPSHOT-standalone.jar s3://S3_BUCKET/keg.jar
-        aws emr add-steps --cluster-id j-XXX \
-        --steps Type=CUSTOM_JAR,Name="Spark Program",Jar="command-runner.jar",ActionOnFailure=CONTINUE,Args=["spark-submit",--master,yarn-client,--class,keg.core,s3://S3_BUCKET/keg.jar]
+        make build
+        make deploy_s3
+        make submit_step
 
 
 ## repl on Cluster Over HTTP
